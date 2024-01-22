@@ -14,8 +14,8 @@ class CreateDocumentsTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('category_id')->index();
-            $table->string('title', 60);
+            $table->bigInteger('category_id');
+            $table->string('title', 60)->index();
             $table->text('contents');
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

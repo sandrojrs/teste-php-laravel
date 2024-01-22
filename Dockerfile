@@ -26,4 +26,5 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 EXPOSE 80
 
 # Start the PHP built-in server
-CMD php artisan serve --host=0.0.0.0 --port=80
+COPY ./run.sh /tmp    
+ENTRYPOINT ["/tmp/run.sh"]

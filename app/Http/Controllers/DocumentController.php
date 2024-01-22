@@ -81,7 +81,6 @@ class DocumentController extends Controller
         $months = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 
         foreach ($months as $month) {
-            // Verifica se o nome do mês está presente na string (ignorando maiúsculas/minúsculas)
             if (stripos($title, $month) !== false) {
                 return true;
             }
