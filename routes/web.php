@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\QueueController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DocumentController::class, 'importIndex'])->name('import.form');
+Route::get('/document', [DocumentController::class, 'index'])->name('document');
+Route::post('/import', [DocumentController::class, 'importDocuments']);
+Route::get('/run-queue', [QueueController::class, 'runQueue']);
+

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +14,11 @@ return new class extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('category_id');
+            $table->bigInteger('category_id')->index();
             $table->string('title', 60);
             $table->text('contents');
 
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
-                ->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -32,4 +29,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('documents');
     }
-};
+}
+;
