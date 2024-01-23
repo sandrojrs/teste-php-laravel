@@ -62,13 +62,6 @@ O docker está automatizado para poder rodar o migrate, seeder e os testes você
 
 para fazer teste no arquivo de importação json altere os dados do titulo e aumente a quantidade de palavras no conteúdo.
 
-## arquivo env
-
-Defina as seguintes variaveis no arquivo env caso não tenha
-
-DB_CONNECTION=sqlite
-QUEUE_CONNECTION=sqlite
-
 ## buildando o container
 
 Após a instalação, abra um terminal no projeto e execute o seguinte comando para inicialização:
