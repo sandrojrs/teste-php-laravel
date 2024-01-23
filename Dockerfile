@@ -34,6 +34,9 @@ RUN echo "DB_DATABASE=/var/www/html/database/database.sqlite" >> /var/www/html/.
 # Expose port 80 for the built-in PHP server
 EXPOSE 80
 
+#create database sqlite
+RUN touch /var/www/html/database/database.sqlite
+
 # Start the PHP built-in server
 COPY ./run.sh /tmp    
 ENTRYPOINT ["/tmp/run.sh"]
