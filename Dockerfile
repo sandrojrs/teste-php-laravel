@@ -38,5 +38,8 @@ EXPOSE 80
 RUN touch /var/www/html/database/database.sqlite
 
 # Start the PHP built-in server
-COPY ./run.sh /tmp    
+COPY ./run.sh /tmp  
+
+RUN chmod +x /tmp/run.sh
+
 ENTRYPOINT ["/tmp/run.sh"]
